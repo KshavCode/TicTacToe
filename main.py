@@ -27,7 +27,6 @@ while True :
     if flag == False : 
         break
     for i in guesslis : 
-        print(i)
         if str(i).isdigit() or i==0 : 
             tie = tie + 1
         else : 
