@@ -21,23 +21,15 @@ while True :
 
 flag = True
 while True : 
-    tie = 0
     if flag == False : 
         break
-    for i in guesslis : 
-        if str(i).isdigit() or i==0 : 
-            tie = tie + 1
-        else : 
-            pass
-        if tie == 0 : 
-            print("Game ended in a Tie!")
-            exit()
     data = [[guesslis[0], guesslis[1], guesslis[2]], [guesslis[3],guesslis[4],guesslis[5]], [guesslis[6],guesslis[7],guesslis[8]]]
        
     if guesslis[0]==guesslis[1]==guesslis[2] or guesslis[3]==guesslis[4]==guesslis[5] or guesslis[6]==guesslis[7]==guesslis[8] or guesslis[0]==guesslis[3]==guesslis[6] or guesslis[1]==guesslis[4]==guesslis[7] or guesslis[2]==guesslis[5]==guesslis[8] or guesslis[0]==guesslis[4]==guesslis[8] or guesslis[2]==guesslis[4]==guesslis[6] : 
         print("Game finished!")
         print("Player 2 Wins!")
         break
+
     
     print(f"Player 1 chose {play1[0]}\nPlayer 2 chose {play2[0]}\n")
     print(tabulate(data, tablefmt="grid"))
@@ -49,7 +41,6 @@ while True :
         else : 
             if guesslis[player1] == "X" or guesslis[player1] == "O" : 
                 print("The position is already taken!")
-                continue
             else : 
                 guesslis[player1] = play1[0]
                 data = [[guesslis[0], guesslis[1], guesslis[2]], [guesslis[3],guesslis[4],guesslis[5]], [guesslis[6],guesslis[7],guesslis[8]]]
@@ -58,21 +49,9 @@ while True :
                     print("Game finished!")
                     print("Player 1 Wins!")
                     flag = False
-                # TIE BREAKER CODE INSERT
                 break
     if flag == False : 
         break
-    tie = 0
-    if flag == False : 
-        break
-    for x in guesslis : 
-        if str(x).isdigit() or x==0 : 
-            tie = tie + 1
-        else : 
-            pass
-        if tie == 0 : 
-            print("Game ended in a Tie!")
-            exit()
     
     while True : 
         player2 = int(input("Player 2 turn : "))
